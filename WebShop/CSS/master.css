@@ -1,1 +1,38 @@
 ﻿@import url('../Content/bootstrap.min.css');
+
+body {
+    font-family: 'PT Sans', sans-serif;
+
+}
+h1,h2,h3,h4 {
+    font-family: 'PT Sans', sans-serif;
+    color:#2c3840;
+}
+.cart {
+    margin-top:7px;
+    width:100px;
+    margin-right:40px;
+}
+.navbar-inverse {
+    background-color: #074E68;
+    border-color: #03384b;
+    border-radius: 0;
+    
+
+    
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #2c3840;
+}
+.navbar-inverse .navbar-brand {
+    color: #17acc0;
+    font-size:2em;
+}
+.navbar-inverse .navbar-nav>li>a {
+    font-size:1.2em;
+    color: #6fd7fc;
+}
+.s {
+    color:#00bcff;
+}

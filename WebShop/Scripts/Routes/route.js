@@ -17,6 +17,13 @@ angular.module("webShopModule")
                     caseInsensitiveMatch: true,
                     activeTab: "Home"
                 })
+                .when("/Products",
+                {
+                    templateUrl: "Views/Products.html",
+                    controller: "ProductsController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Products"
+                })
                 .when("/Cart",
                 {
                     templateUrl: "Views/Cart.html",
@@ -24,6 +31,6 @@ angular.module("webShopModule")
                     caseInsensitiveMatch: true,
                     activeTab: "Cart"
                 });
-                
+
         }
     ]);
