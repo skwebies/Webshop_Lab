@@ -30,6 +30,13 @@ angular.module("webShopModule")
                     controller: "CartController",
                     caseInsensitiveMatch: true,
                     activeTab: "Cart"
+                })
+                .when("/Admin",
+                {
+                    templateUrl: "Views/Admin/Admin.html",
+                    controller: "AdminController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Admin"
                 });
 
         }
