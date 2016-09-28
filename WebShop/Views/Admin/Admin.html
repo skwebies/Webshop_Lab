@@ -1,4 +1,30 @@
 ﻿<h1 ng-bind="title"></h1>
 <div>
-    <button class="btn btn-success" data-toggle="modal" data-target="#addProductModal">Add New Products</button>
+    <button class="btn btn-success" data-toggle="modal" data-target="#addNewProductModal">Add New Products</button>
 </div>
+
+<table class="table table-responsive table-striped" >
+    <thead >
+    <tr ng-if="products.length">
+        <th><h3>Product Name</h3></th>
+        <th><h3>Image</h3></th>
+        <th><h3>Price (SEK)</h3></th>
+        <th><h3>Description</h3></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="product in products  track by $index">
+        <td><h4 ng-bind="product.name"></h4></td>
+        <td><img ng-src="Images/{{product.name}}.jpg" alt="Product Images" width="50"/></td>
+        <td><h4 ng-bind="product.price + ' kr'"></h4></td>
+        <td><h4 ng-bind="product.description"></h4></td>
+        <td>
+            <button class="btn btn-danger" title="Delete"><i class="glyphicon glyphicon-trash"></i></button>
+            <button class="btn btn-default" title="Edit"><i class="glyphicon glyphicon-pencil"></i></button>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+<div ng-include="'Views/Partials/AddNewProductModal.html'"></div>

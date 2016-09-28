@@ -1,1 +1,12 @@
 ﻿<h1 ng-bind="title"></h1>
+<div class="col-md-12">
+    <div class="col-md-2 text-center pull-left" ng-repeat="product in products track by $index">
+        <div class="col-md-12">
+            <h3 ng-bind="product.name"></h3>
+            <p><img ng-src="Images/{{product.name}}.jpg" width="130" /></p>
+            <p ng-bind="product.description"></p>
+
+        </div>
+
+    </div>
+</div>

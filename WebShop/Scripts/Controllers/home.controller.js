@@ -7,5 +7,9 @@ angular.module("webShopModule")
 
         function($scope) {
             $scope.title = "Home";
+
+            
+
+            
         }
     ]);
