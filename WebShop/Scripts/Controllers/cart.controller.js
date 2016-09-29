@@ -7,5 +7,8 @@ angular.module("webShopModule")
 
         function($scope) {
             $scope.title = "Shopping Cart";
+
+            
+            
         }
     ]);

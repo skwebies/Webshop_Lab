@@ -3,28 +3,65 @@
     <button class="btn btn-success" data-toggle="modal" data-target="#addNewProductModal">Add New Products</button>
 </div>
 
-<table class="table table-responsive table-striped" >
-    <thead >
+<table class="table table-responsive table-striped">
+    <thead>
+    <tr><td class="text-info">Note: Click on the product fields to edit..</td></tr>
     <tr ng-if="products.length">
-        <th><h3>Product Name</h3></th>
-        <th><h3>Image</h3></th>
-        <th><h3>Price (SEK)</h3></th>
-        <th><h3>Description</h3></th>
+        <th>
+            <h3>Product Name</h3></th>
+        <th>
+            <h3>Image</h3></th>
+        <th>
+            <h3>Price (SEK)</h3></th>
+        <th>
+            <h3>Description</h3></th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="product in products  track by $index">
-        <td><h4 ng-bind="product.name"></h4></td>
-        <td><img ng-src="Images/{{product.name}}.jpg" alt="Product Images" width="50"/></td>
-        <td><h4 ng-bind="product.price + ' kr'"></h4></td>
-        <td><h4 ng-bind="product.description"></h4></td>
-        <td>
-            <button class="btn btn-danger" title="Delete"><i class="glyphicon glyphicon-trash"></i></button>
-            <button class="btn btn-default" title="Edit"><i class="glyphicon glyphicon-pencil"></i></button>
+        <!--implemented on click edit-->
+        <td><h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.name"></h4>
+
+            <div class="col-md-6">
+                <form ng-submit="editing=false" class="form-inline">
+                    <input type="text" ng-show="editing" ng-model="product.name" placeholder="name" class="form-control"/>
+                    <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
+                </form>
+            </div>
+
         </td>
+
+        <td><img ng-src="Images/{{product.name}}.jpg" alt="Product Images" width="50"/></td>
+        
+
+        <td>
+            <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.price + ' kr'"></h4>
+            <form ng-submit="editing=false" class="form-inline">
+                <input type="text" ng-show="editing" ng-model="product.price" placeholder="name" class="form-control" />
+                <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
+            </form>
+        </td>
+        <td>
+            <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.description"></h4>
+            <form ng-submit="editing=false" class="form-inline">
+                <input type="text" ng-show="editing" ng-model="product.description" placeholder="name" class="form-control" />
+                <button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>
+            </form>
+        </td>
+        <td>
+            <button class="btn btn-danger" title="Delete" ng-click="removeProduct($index)"><i class="glyphicon glyphicon-trash"></i></button>
+            <!--<button class="btn btn-default" title="Edit" ng-click="editing=true"><i class="glyphicon glyphicon-pencil"></i></button>-->
+        </td>
+
     </tr>
     </tbody>
+    <tfoot>
+    <tr>
+       
+    </tr>
+    </tfoot>
 
 </table>
+
 
 <div ng-include="'Views/Partials/AddNewProductModal.html'"></div>

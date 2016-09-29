@@ -5,7 +5,9 @@
             <h3 ng-bind="product.name"></h3>
             <p><img ng-src="Images/{{product.name}}.jpg" width="130" /></p>
             <p ng-bind="product.description"></p>
-
+            <div class="col-md-12">
+                <button class="btn btn-success" ng-click="addToCart(product)">Add To Cart</button>
+            </div>
         </div>
 
     </div>
