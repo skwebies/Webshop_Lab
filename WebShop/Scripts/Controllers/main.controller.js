@@ -8,9 +8,9 @@ angular.module("webShopModule")
         "$route",
 
         function($scope, $location, $route) {
-            $scope.$route = $route;
+            $scope.$route = $route; //route scoped to target the active tab
 
-            $scope.products = [];
+            $scope.products = []; //products array defined
 
             //Cart Products Defined as array
             $scope.cartProducts = [];
@@ -25,7 +25,7 @@ angular.module("webShopModule")
                 }          
 
             }
-
+            //remove products from cart
             $scope.removeCartProducts = function (index) {
                 $scope.cartProducts.splice(index, 1);
 
@@ -37,14 +37,14 @@ angular.module("webShopModule")
 
             
 
-
+            //load function for products from local storage..
             $scope.loadProducts = function() {
                 var dataString = localStorage.getItem("products");
 
                 if (dataString)
                     $scope.products = JSON.parse(dataString);
             }
-
+            //saving products to the local storage..
             $scope.saveProducts = function() {
                 var jsonString = JSON.stringify($scope.products);
                 localStorage.setItem("products", jsonString);
@@ -70,6 +70,8 @@ angular.module("webShopModule")
 
             
             $scope.loadCartProducts(); // initial load for cart products
+
+
 
             $scope.go = function(url) {
                 $location.path(url);
