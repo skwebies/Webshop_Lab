@@ -36,3 +36,13 @@ h1,h2,h3,h4 {
 .s {
     color:#00bcff;
 }
+
+.cartTotalPrice {
+    font-weight:bold;
+    position: relative;
+    left: 298px;
+
+}
+/*.cartTotalPrice span {
+    color:#2c3840;
+}*/

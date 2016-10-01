@@ -29,18 +29,18 @@ angular.module("webShopModule")
 
 
 
-            $scope.imageLoad = function (id) {
-                return IMAGES[id];
-            }
+            //$scope.imageLoad = function (id) {
+            //    return IMAGES[id];
+            //}
 
-            var IMAGES = {
-                1: 'toy1.jpg',
-                2: 'toy2.jpg',
-                3: 'toy3.jpg',
-                4: 'toy4.jpg',
-                5: 'toy5.jpg',
-                6: 'toy6.jpg',
-            }
+            //var IMAGES = {
+            //    1: 'toy1.jpg',
+            //    2: 'toy2.jpg',
+            //    3: 'toy3.jpg',
+            //    4: 'toy4.jpg',
+            //    5: 'toy5.jpg',
+            //    6: 'toy6.jpg',
+            //}
 
 
 

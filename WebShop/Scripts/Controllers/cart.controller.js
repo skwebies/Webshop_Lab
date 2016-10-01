@@ -9,6 +9,5 @@ angular.module("webShopModule")
             $scope.title = "Shopping Cart";
 
             
-            
         }
     ]);

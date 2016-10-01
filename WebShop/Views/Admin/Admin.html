@@ -35,7 +35,7 @@
         
 
         <td>
-            <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.price + ' kr'"></h4>
+            <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.price | currency : 'SEK '"></h4>
             <form ng-submit="editing=false" class="form-inline">
                 <input type="text" ng-show="editing" ng-model="product.price" placeholder="name" class="form-control" />
                 <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->

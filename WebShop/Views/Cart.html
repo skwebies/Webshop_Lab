@@ -3,23 +3,33 @@
     <h1 ng-bind="title"></h1>
     <table class="table table-responsive">
         <thead>
-        <tr>
+        <tr ng-if="cartProducts != 0">
             <th>Product Image</th>
             <th>Product Name</th>
             <th>Product Price</th>
             <th>Product Description</th>
         </tr>
         </thead>
+        
         <tbody>
         <tr ng-repeat="cartProduct in cartProducts track by $index">
-            <td><img ng-src="Images/{{cartProduct.name}}.jpg" alt="{{cartProduct.name}}" width="40"/></td>
+            <td>
+                <img ng-src="Images/{{cartProduct.name}}.jpg" alt="{{cartProduct.name}}" width="40" />
+            </td>
             <td ng-bind="cartProduct.name"></td>
-            <td ng-bind="cartProduct.price"></td>
+            <td ng-bind="cartProduct.price | currency : 'SEK '"></td>
             <td ng-bind="cartProduct.description"></td>
-            <td><button class="btn btn-sm btn-danger" ng-click="removeCartProducts($index)"><i class="glyphicon glyphicon-trash"></i></button></td>
+            <td><button class="btn btn-sm btn-danger" ng-click="removeCartProducts($index)"><i class="glyphicon glyphicon-remove" title="Remove"></i></button></td>
 
         </tr>
         </tbody>
+        <tfoot>
+            <tr ng-if="cartProducts != 0">
+                <td>
+                    <h4 class="cartTotalPrice">Total Amount:  <span ng-bind="calCulateCartTotalPrice() | currency : 'SEK '" class="text-danger"></span></h4>
+                </td>
+            </tr>
+        </tfoot>
 
     </table>
 </div>
