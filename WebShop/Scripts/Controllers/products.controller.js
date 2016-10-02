@@ -3,14 +3,11 @@
 angular.module("webShopModule")
     .controller("ProductsController",
     [
-        "$scope",
-
+        "$scope",       
         function($scope) {
             $scope.title = "Products";
 
-           
-            
-            
+          
 
         }
     ]);

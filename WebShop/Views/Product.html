@@ -1,0 +1,12 @@
+﻿<h1 ng-bind="title"></h1>
+<div class="col-md-6">
+    <div class="col-md-12">
+        <h2 ng-bind="product.name" class="text-capitalize"></h2>
+        <p>Category: {{product.category.name}}</p>
+        <img ng-src="Images/{{product.name}}.jpg" width="280"/><br />
+        <h3 class="text-danger" ng-bind="product.price | currency : 'SEK '"></h3>
+        <p ng-bind="product.description"></p>
+        <button class="btn btn-success" ng-click="addToCart(product)">Add To Cart</button>
+    </div>
+    
+</div>

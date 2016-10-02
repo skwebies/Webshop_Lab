@@ -43,6 +43,12 @@ h1,h2,h3,h4 {
     left: 298px;
 
 }
+.odd-row {
+    background-color:#e4f8ff!important;
+}
+.even-row {
+    background-color:#d0f0fb!important;
+}
 /*.cartTotalPrice span {
     color:#2c3840;
 }*/

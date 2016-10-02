@@ -37,6 +37,13 @@ angular.module("webShopModule")
                     controller: "AdminController",
                     caseInsensitiveMatch: true,
                     activeTab: "Admin"
+                })
+                .when("/Product/:id",
+                {
+                    templateUrl: "Views/Product.html",
+                    controller: "ProductController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Products"
                 });
 
         }

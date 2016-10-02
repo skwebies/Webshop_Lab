@@ -12,6 +12,8 @@ angular.module("webShopModule")
 
             $scope.products = []; //products array defined
 
+            $scope.categories = [];
+
             //Cart Products Defined as array
             $scope.cartProducts = [];
             
@@ -86,6 +88,14 @@ angular.module("webShopModule")
                     $scope.productCount = JSON.parse(dataCountString);
             }
 
+            //load categories 
+            $scope.loadCategories = function() {
+                var dataStringCategory = localStorage.getItem("categories");
+
+                if (dataStringCategory)
+                    $scope.categories = JSON.parse(dataStringCategory);
+            }
+
 
             //saving cart Products
             $scope.saveCartProducts = function () {
@@ -98,7 +108,16 @@ angular.module("webShopModule")
                 localStorage.setItem("productCount", countString);
             }
 
+
+            //Saving Categories
+            $scope.saveCategories = function() {
+                var jsonStringCategory = JSON.stringify($scope.categories);
+                localStorage.setItem("categories", jsonStringCategory);
+            }
+
+
             $scope.loadProducts(); //initial load for products
+            $scope.loadCategories();
 
             
             $scope.loadCartProducts(); // initial load for cart products

@@ -1,0 +1,36 @@
+﻿<div id="createNewCategory" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content -->
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--<button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>-->
+                    <h1 class="modal-title">Create Product Category</h1>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="category-name">Category Name:</label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="newCategory.name"
+                               placeholder="Category name..."  />
+                    </div>
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="createCategory()" class="btn btn-primary" data-dismiss="modal">
+                        Save
+                    </button>
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>-->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -2,12 +2,15 @@
 <div class="col-md-12">
     <div class="col-md-2 text-center pull-left" ng-repeat="product in products track by $index">
         <div class="col-md-12">
-            <h3 ng-bind="product.name"></h3>
+            <h3 ng-bind="product.name" class="text-capitalize"></h3>
+            <span  class="text-muted">Category: {{product.category.name}}</span>
             <p><img ng-src="Images/{{product.name}}.jpg" width="130" /></p>
             <h4 ng-bind="product.price | currency : 'SEK '" class="text-danger"></h4>
+            
             <p ng-bind="product.description"></p>
             <div class="col-md-12">
-                <button class="btn btn-success" ng-click="addToCart(product)">Add To Cart</button>
+                <button class="btn btn-sm btn-primary" ng-click="go('/Product/' + product.id)">View Info</button>
+                <button class="btn btn-sm btn-success" ng-click="addToCart(product)">Add To Cart</button>
             </div>
         </div>
 

@@ -11,9 +11,14 @@ angular.module("webShopModule")
             $scope.newProduct = {
                 name: "",
                 price: "",
-                description: ""
+                description: "",
                 
                 
+                
+            };
+
+            $scope.newCategory = {
+                name: ""
             };
 
             $scope.addProduct = function () {
@@ -27,22 +32,14 @@ angular.module("webShopModule")
 
             }
 
+            $scope.createCategory = function () {
+                $scope.newCategory.id = Date.now();
 
+                $scope.categories.push($scope.newCategory);
+                $scope.newCategory = {};
+                $scope.saveCategories();
 
-            //$scope.imageLoad = function (id) {
-            //    return IMAGES[id];
-            //}
-
-            //var IMAGES = {
-            //    1: 'toy1.jpg',
-            //    2: 'toy2.jpg',
-            //    3: 'toy3.jpg',
-            //    4: 'toy4.jpg',
-            //    5: 'toy5.jpg',
-            //    6: 'toy6.jpg',
-            //}
-
-
+            }
 
 
 
@@ -54,10 +51,20 @@ angular.module("webShopModule")
                 $scope.saveProducts();
             }
 
-            $scope.updateProduct = function() {
+            $scope.updateProduct = function () {
+
                 $scope.current = {};
                 
                 $scope.saveProducts();
+                $scope.updateCategory();
+
+            }
+
+
+            $scope.updateCategory = function () {
+               
+                $scope.categories.push($scope.products.categories);
+                $scope.saveCategories();
             }
 
             $scope.removeProduct = function(index) {

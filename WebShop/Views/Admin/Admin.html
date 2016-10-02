@@ -1,6 +1,7 @@
 ﻿<h1 ng-bind="title"></h1>
 <div>
     <button class="btn btn-success" data-toggle="modal" data-target="#addNewProductModal">Add New Products</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#createNewCategory">Create New Category</button>
 </div>
 
 <table class="table table-responsive table-striped">
@@ -14,13 +15,16 @@
         <th>
             <h3>Price (SEK)</h3></th>
         <th>
+            <h3>Category</h3>
+        </th>
+        <th>
             <h3>Description</h3></th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="product in products  track by $index">
+    <tr ng-repeat="product in products  track by $index" ng-class-odd="'odd-row'" ng-class-even="'even-row'">
         <!--implemented on click edit-->
-        <td><h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.name"></h4>
+        <td><h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.name" class="text-capitalize"></h4>
 
             <div class="col-md-6">
                 <form ng-submit="editing=false" class="form-inline">
@@ -40,6 +44,13 @@
                 <input type="text" ng-show="editing" ng-model="product.price" placeholder="name" class="form-control" />
                 <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
             </form>
+        </td>
+        <td>
+            <h4 ng-bind="product.category.name" class="text-muted"></h4>
+            <!--<form ng-submit="editing=false" class="form-inline">
+                <input type="text" ng-show="editing" ng-model="product.category.name" placeholder="name" class="form-control" />-->
+                <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
+            <!--</form>-->
         </td>
         <td>
             <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.description"></h4>
@@ -65,3 +76,4 @@
 
 
 <div ng-include="'Views/Partials/AddNewProductModal.html'"></div>
+<div ng-include="'Views/Partials/createNewCategory.html'"></div>
