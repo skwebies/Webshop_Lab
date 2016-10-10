@@ -3,5 +3,7 @@
 
 angular.module("webShopModule",
 [
-    "ngRoute"
+    "ngRoute",
+    "ngMessages"
+    
 ]);

@@ -1,4 +1,4 @@
-﻿<div id="createNewCategory" class="modal fade" role="dialog">
+﻿<div id="createNewCategory" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
 
         <!-- Modal content -->
@@ -8,12 +8,12 @@
                     <!--<button type="button" class="close" data-dismiss="modal">
                         &times;
                     </button>-->
-                    <h1 class="modal-title">Create Product Category</h1>
+                    <h1 class="modal-title text-success">Create Product Category</h1>
                 </div>
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label for="category-name">Category Name:</label>
+                        <label for="category-name" class="text-primary">Category Name:</label>
                         <input type="text"
                                class="form-control"
                                ng-model="newCategory.name"
@@ -23,6 +23,7 @@
 
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button" ng-click="createCategory()" class="btn btn-primary" data-dismiss="modal">
                         Save
                     </button>

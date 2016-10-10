@@ -7,10 +7,10 @@
             <th>Product Image</th>
             <th>Product Name</th>
             <th>Product Price</th>
-            <th>Product Description</th>
+            <th>Product Quantity</th>
         </tr>
         </thead>
-        
+
         <tbody>
         <tr ng-repeat="cartProduct in cartProducts track by $index">
             <td>
@@ -18,7 +18,11 @@
             </td>
             <td ng-bind="cartProduct.name"></td>
             <td ng-bind="cartProduct.price | currency : 'SEK '"></td>
-            <td ng-bind="cartProduct.description"></td>
+            <td>
+                <button class="btn btn-sm btn-default"><i class="glyphicon glyphicon-minus"></i></button>
+                1
+                <button class="btn btn-sm btn-default"><i class="glyphicon glyphicon-plus"></i></button>
+            </td>
             <td><button class="btn btn-sm btn-danger" ng-click="removeCartProducts($index)"><i class="glyphicon glyphicon-remove" title="Remove"></i></button></td>
 
         </tr>

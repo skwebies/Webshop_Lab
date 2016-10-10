@@ -10,36 +10,50 @@ angular.module("webShopModule")
 
             $scope.newProduct = {
                 name: "",
-                price: "",
-                description: "",
-                
-                
-                
+                price: "",               
+                description: ""
+            
             };
+
+           
 
             $scope.newCategory = {
                 name: ""
             };
 
-            $scope.addProduct = function () {
+            //Putting addProduct form in a object
+            $scope.form = {
+                addProductForm: {}
+            };
+
+
+            //adding product.(initial model for the app)
+            $scope.addProduct = function() {
 
                 $scope.newProduct.id = Date.now();
-                
+
                 $scope.products.push($scope.newProduct);
                 $scope.newProduct = {};
 
-                $scope.saveProducts();
+                $scope.form.addProductForm.$setPristine();// reseting the form to initial stage
+                $scope.form.addProductForm.$setUntouched();
+                $scope.form.addProductForm.$submitted = false;
+                $scope.saveProducts(); //saving the products after submit
+                
 
-            }
+            };
 
-            $scope.createCategory = function () {
+
+            
+            //Creating category
+            $scope.createCategory = function() {
                 $scope.newCategory.id = Date.now();
 
                 $scope.categories.push($scope.newCategory);
                 $scope.newCategory = {};
                 $scope.saveCategories();
 
-            }
+            };
 
 
 
@@ -47,29 +61,29 @@ angular.module("webShopModule")
 
             $scope.editProduct = function(product) {
                 $scope.current = product;
-                
-                $scope.saveProducts();
-            }
 
-            $scope.updateProduct = function () {
+                $scope.saveProducts();
+            };
+
+            $scope.updateProduct = function() {
 
                 $scope.current = {};
-                
+
                 $scope.saveProducts();
                 $scope.updateCategory();
 
-            }
+            };
 
 
-            $scope.updateCategory = function () {
-               
+            $scope.updateCategory = function() {
+
                 $scope.categories.push($scope.products.categories);
                 $scope.saveCategories();
-            }
+            };
 
             $scope.removeProduct = function(index) {
                 $scope.products.splice(index, 1);
                 $scope.saveProducts();
-            }
+            };
         }
     ]);

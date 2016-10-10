@@ -4,7 +4,7 @@
     <button class="btn btn-primary" data-toggle="modal" data-target="#createNewCategory">Create New Category</button>
 </div>
 
-<table class="table table-responsive table-striped">
+<table class="table table-responsive">
     <thead>
     <tr><td class="text-info">Note: Click on the product fields to edit..</td></tr>
     <tr ng-if="products.length">
@@ -14,6 +14,10 @@
             <h3>Image</h3></th>
         <th>
             <h3>Price (SEK)</h3></th>
+        
+        <th>
+            <h3>Quantity</h3>
+        </th>
         <th>
             <h3>Category</h3>
         </th>
@@ -41,7 +45,14 @@
         <td>
             <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.price | currency : 'SEK '"></h4>
             <form ng-submit="editing=false" class="form-inline">
-                <input type="text" ng-show="editing" ng-model="product.price" placeholder="name" class="form-control" />
+                <input type="text" ng-show="editing" ng-model="product.price" placeholder="Price" class="form-control" />
+                <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
+            </form>
+        </td>
+        <td>
+            <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.quantity"></h4>
+            <form ng-submit="editing=false" class="form-inline">
+                <input type="text" ng-show="editing" ng-model="product.quantity" placeholder="Quantity" class="form-control" />
                 <!--<button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>-->
             </form>
         </td>
@@ -55,7 +66,8 @@
         <td>
             <h4 ng-hide="editing" ng-click="editing=true" ng-bind="product.description"></h4>
             <form ng-submit="editing=false" class="form-inline">
-                <input type="text" ng-show="editing" ng-model="product.description" placeholder="name" class="form-control" />
+                <input type="text" ng-show="editing" ng-model="product.description" placeholder="Description" class="form-control" />
+                <button ng-show="editing" ng-click="editing=false" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-remove"></i></button>
                 <button ng-show="editing" class="btn btn-sm btn-success" type="submit" ng-click="updateProduct()"><i class="glyphicon glyphicon-ok"></i></button>
             </form>
         </td>

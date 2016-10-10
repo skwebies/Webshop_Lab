@@ -1,5 +1,8 @@
 ﻿@import url('../Content/bootstrap.min.css');
 
+
+
+
 body {
     font-family: 'PT Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -43,12 +46,26 @@ h1,h2,h3,h4 {
     left: 298px;
 
 }
+
+
 .odd-row {
-    background-color:#e4f8ff!important;
+    background-color:#e4f8ff;
+    
 }
 .even-row {
-    background-color:#d0f0fb!important;
+    background-color:#d0f0fb;
+    
 }
-/*.cartTotalPrice span {
-    color:#2c3840;
-}*/
+.carousel-inner {
+    height:400px;
+    width:100%;
+    padding: 0;
+    margin:0;
+}
+.carousel-inner img {
+    position: relative;
+    top:-430px;
+
+}
+
+
